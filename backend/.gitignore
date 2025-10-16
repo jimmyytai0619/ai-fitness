@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+.venv/
+
+# Docker
+*.log
+pgdata/
+
+# VSCode
+.vscode/
+
+# Environment
+.env
+*.env
+
+# Cache / Temp
+*.sqlite3
+uploads/
