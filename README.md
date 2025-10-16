@@ -4,6 +4,11 @@
 
 🗃️ Database - PostgreSQL (Railway)
 
-Note To Myself:
-run fronend: npm run dev
-then open http://localhost:3000
+how to run:
+cd backend
+uvicorn app.main:app --reload
+http://localhost:8000
+
+cdfrontend
+npm run dev
+http://localhost:3000
