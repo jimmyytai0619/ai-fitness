@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8000/api";
+// Use environment variable for API URL, fallback to localhost for development
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL 
+  ? `${process.env.NEXT_PUBLIC_API_URL}/api` 
+  : "http://localhost:8000/api";
 
 export const createUser = async (email, name) => {
   const res = await axios.post(`${BASE_URL}/users`, { email, name });
@@ -17,7 +20,6 @@ export const getUserByEmail = async (email) => {
     throw error;
   }
 };
-
 
 export const addWorkout = async (userId, workout) => {
   const res = await axios.post(`${BASE_URL}/users/${userId}/workouts`, workout);
