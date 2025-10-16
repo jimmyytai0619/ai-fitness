@@ -6,16 +6,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 models.Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="ai-fitness API")
-
-origins = [
-    "http://localhost:3000",  # your Next.js frontend
-    "http://127.0.0.1:3000",  # alternate localhost form
-]
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # for testing, allow all. Later restrict to localhost:3000
+    allow_origins=["*"],  # for now, allow all origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

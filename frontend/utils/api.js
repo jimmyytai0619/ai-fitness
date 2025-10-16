@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8000/api";
+const BASE_URL = "https://ai-fitness-production.up.railway.app/api";
 
 export const createUser = async (email, name) => {
   const res = await axios.post(`${BASE_URL}/users`, { email, name });
