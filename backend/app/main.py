@@ -3,18 +3,27 @@ from sqlalchemy.orm import Session
 from app import models, schemas, crud
 from app.database import SessionLocal, engine
 from fastapi.middleware.cors import CORSMiddleware
+from routes import users  # your router file
 
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # for now, allow all origins
+    allow_origins=["*"],  # you can restrict to ["http://localhost:3000"] later
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Routers
+app.include_router(users.router, prefix="/api/users", tags=["users"])
+
+@app.get("/")
+def root():
+    return {"message": "AI Fitness Backend running!"}
 
 # Dependency
 def get_db():
