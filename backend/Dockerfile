@@ -1,18 +1,17 @@
-# backend/Dockerfile
-FROM python:3.11-slim
+# Use Python base image
+FROM python:3.11
 
-# Set work directory
+# Set working directory
 WORKDIR /app
 
-# Install dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy app code
+# Copy project files
 COPY . .
 
-# Expose port
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expose the port Railway will use
 EXPOSE 8000
 
-# Run FastAPI
+# Run FastAPI using uvicorn
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
