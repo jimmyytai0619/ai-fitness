@@ -11,6 +11,7 @@ class WorkoutType(str, enum.Enum):
     cardio = "cardio"
     hiit = "hiit"
     yoga = "yoga"
+    stretching = "stretching"
     other = "other"
 
 class User(Base):
