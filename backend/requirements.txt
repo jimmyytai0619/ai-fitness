@@ -9,3 +9,4 @@ pydantic[email]
 celery[redis]
 pandas
 python-multipart
+sqlalchemy
