@@ -5,6 +5,10 @@ const BASE_URL = process.env.NEXT_PUBLIC_API_URL
   ? `${process.env.NEXT_PUBLIC_API_URL}/api` 
   : "http://localhost:8000/api";
 
+console.log("🔍 BASE_URL:", BASE_URL);
+console.log("🔍 process.env.NEXT_PUBLIC_API_URL:", process.env.NEXT_PUBLIC_API_URL);
+
+
 export const createUser = async (email, name) => {
   const res = await axios.post(`${BASE_URL}/users`, { email, name });
   return res.data;
