@@ -8,6 +8,11 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+origins = [
+    "https://ai-fitness-production.up.railway.app",  # your frontend URL
+    "http://localhost:3000",  # for local testing
+]
+
 # ✅ Enable CORS for frontend access
 app.add_middleware(
     CORSMiddleware,
