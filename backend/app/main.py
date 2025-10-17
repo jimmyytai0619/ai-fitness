@@ -14,7 +14,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://ai-fitness-production.up.railway.app",  # your frontend URL
-    "http://localhost:3000"
+    "http://localhost:8080"
     ],  # for local testing,  # for now, allow all
     allow_credentials=True,
     allow_methods=["*"],
