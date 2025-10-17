@@ -1,6 +1,6 @@
 import os
 import uvicorn
-from app.main import app  # note: 'app.main', not 'backend.app.main'
+from main import app  # note: 'app.main', not 'backend.app.main'
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
